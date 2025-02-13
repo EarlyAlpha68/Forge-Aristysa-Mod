@@ -28,9 +28,9 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.add(ModBlocks.LEAD_ORE.get(),
                 block -> createOreDrop(ModBlocks.LEAD_ORE.get(), ModItems.RAW_LEAD.get()));
         this.add(ModBlocks.DEEPSLATE_ALUMINUM_ORE.get(),
-                block -> createOreDrop(ModBlocks.ALUMINUM_ORE.get(), ModItems.RAW_ALUMINUM.get()));
+                block -> createOreDrop(ModBlocks.DEEPSLATE_ALUMINUM_ORE.get(), ModItems.RAW_ALUMINUM.get()));
         this.add(ModBlocks.DEEPSLATE_LEAD_ORE.get(),
-                block -> createOreDrop(ModBlocks.LEAD_ORE.get(), ModItems.RAW_LEAD.get()));
+                block -> createOreDrop(ModBlocks.DEEPSLATE_LEAD_ORE.get(), ModItems.RAW_LEAD.get()));
     }
 
     @Override

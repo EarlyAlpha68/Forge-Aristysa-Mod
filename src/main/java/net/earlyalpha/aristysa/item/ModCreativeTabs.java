@@ -22,6 +22,13 @@ public class ModCreativeTabs {
                         output.accept(ModItems.LEAD_INGOT.get());
                         output.accept(ModItems.RAW_LEAD.get());
                         output.accept(ModBlocks.LEAD_BLOCK.get());
+                        output.accept(ModBlocks.RAW_LEAD_BLOCK.get());
+                        output.accept(ModBlocks.LEAD_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_LEAD_ORE.get());
+                        output.accept(ModItems.ALUMINUM_INGOT.get());
+                        output.accept(ModItems.RAW_ALUMINUM.get());
+                        output.accept(ModBlocks.ALUMINUM_ORE.get());
+                        output.accept(ModBlocks.DEEPSLATE_ALUMINUM_ORE.get());
                     })
                     .build());
 
