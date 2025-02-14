@@ -1,6 +1,7 @@
 package net.earlyalpha.aristysa.event;
 
 import net.earlyalpha.aristysa.Aristysa;
+
 import net.earlyalpha.aristysa.capability.PlayerCyberwareTier;
 import net.earlyalpha.aristysa.capability.PlayerCyberwareTierProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -15,8 +16,8 @@ import net.minecraftforge.fml.common.Mod;
 public class ModEvents {
     @SubscribeEvent
     public static void onAttachCapabilitiesPlayer(AttachCapabilitiesEvent<Entity> event) {
-        if (event.getObject() instanceof Player) {
-            if (!event.getObject().getCapability(PlayerCyberwareTierProvider.PLAYER_CYBERWARE_TIER).isPresent()) {
+        if(event.getObject() instanceof Player) {
+            if(!event.getObject().getCapability(PlayerCyberwareTierProvider.PLAYER_CYBERWARE_TIER).isPresent()) {
                 event.addCapability(new ResourceLocation(Aristysa.MOD_ID, "properties"), new PlayerCyberwareTierProvider());
             }
         }
@@ -25,5 +26,4 @@ public class ModEvents {
     public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
         event.register(PlayerCyberwareTier.class);
     }
-
 }

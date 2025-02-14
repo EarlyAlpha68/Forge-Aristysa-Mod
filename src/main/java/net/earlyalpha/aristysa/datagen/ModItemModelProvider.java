@@ -27,8 +27,18 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.CYBERLEG_1);
         simpleItem(ModItems.CYBERLEG_2);
         simpleItem(ModItems.CYBERLEG_3);
-
-
+        simpleItem(ModItems.GOLEMARM_1);
+        simpleItem(ModItems.GOLEMARM_2);
+        simpleItem(ModItems.GOLEMARM_3);
+        simpleItem(ModItems.OPTICAL_CAMO_1);
+        simpleItem(ModItems.OPTICAL_CAMO_2);
+        simpleItem(ModItems.OPTICAL_CAMO_3);
+        simpleItem(ModItems.SUBDERMAL_ARMOR_1);
+        simpleItem(ModItems.SUBDERMAL_ARMOR_2);
+        simpleItem(ModItems.SUBDERMAL_ARMOR_3);
+        simpleItem(ModItems.WARDEN_HEART_1);
+        simpleItem(ModItems.WARDEN_HEART_2);
+        simpleItem(ModItems.WARDEN_HEART_3);
     }
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {
         return withExistingParent(item.getId().getPath(),

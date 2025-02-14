@@ -3,9 +3,12 @@ package net.earlyalpha.aristysa.util;
 import net.earlyalpha.aristysa.capability.PlayerCyberwareTier;
 import net.earlyalpha.aristysa.capability.PlayerCyberwareTierProvider;
 import net.earlyalpha.aristysa.item.ModItems;
+import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
+import java.util.List;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -50,6 +53,7 @@ public class EarlyUtil {
         //give the attached number of order of a specific implant
     }
     public static int getImplantTier(Player player,String key) {
+        // Get the implant tier from the player capability
         AtomicInteger tierHolder = new AtomicInteger();
         player.getCapability(PlayerCyberwareTierProvider.PLAYER_CYBERWARE_TIER).ifPresent(playerCyberwareTier -> {
             tierHolder.set(playerCyberwareTier.getTier(key));
@@ -77,36 +81,257 @@ public class EarlyUtil {
                 case 3 -> new ItemStack(ModItems.ENDEREYE_3.get());
                 default -> ItemStack.EMPTY;
             };
-            /*
+
             case 2 -> switch (implantTier) {
-                case 1 -> new ItemStack(ModItems.GOLEMARM_1);
-                case 2 -> new ItemStack(ModItems.GOLEMARM_2);
-                case 3 -> new ItemStack(ModItems.GOLEMARM_3);
+                case 1 -> new ItemStack(ModItems.GOLEMARM_1.get());
+                case 2 -> new ItemStack(ModItems.GOLEMARM_2.get());
+                case 3 -> new ItemStack(ModItems.GOLEMARM_3.get());
                 default -> ItemStack.EMPTY;
             };
             case 3 -> switch (implantTier) {
-                case 1 -> new ItemStack(ModItems.OPTICAL_CAMO_1);
-                case 2 -> new ItemStack(ModItems.OPTICAL_CAMO_2);
-                case 3 -> new ItemStack(ModItems.OPTICAL_CAMO_3);
+                case 1 -> new ItemStack(ModItems.OPTICAL_CAMO_1.get());
+                case 2 -> new ItemStack(ModItems.OPTICAL_CAMO_2.get());
+                case 3 -> new ItemStack(ModItems.OPTICAL_CAMO_3.get());
                 default -> ItemStack.EMPTY;
             };
             case 4 -> switch (implantTier) {
-                case 1 -> new ItemStack(ModItems.SUBDERMAL_ARMOR_1);
-                case 2 -> new ItemStack(ModItems.SUBDERMAL_ARMOR_2);
-                case 3 -> new ItemStack(ModItems.SUBDERMAL_ARMOR_3);
+                case 1 -> new ItemStack(ModItems.SUBDERMAL_ARMOR_1.get());
+                case 2 -> new ItemStack(ModItems.SUBDERMAL_ARMOR_2.get());
+                case 3 -> new ItemStack(ModItems.SUBDERMAL_ARMOR_3.get());
                 default -> ItemStack.EMPTY;
             };
             case 5 -> switch (implantTier) {
-                case 1 -> new ItemStack(ModItems.WARDEN_HEART_1);
-                case 2 -> new ItemStack(ModItems.WARDEN_HEART_2);
-                case 3 -> new ItemStack(ModItems.WARDEN_HEART_3);
+                case 1 -> new ItemStack(ModItems.WARDEN_HEART_1.get());
+                case 2 -> new ItemStack(ModItems.WARDEN_HEART_2.get());
+                case 3 -> new ItemStack(ModItems.WARDEN_HEART_3.get());
                 default -> ItemStack.EMPTY;
-            };*/
+            };
             default -> ItemStack.EMPTY;
         };
+    }
+        public static void cyberwareItemToolTip(List<Component> tooltip, int tier, int type) {
+            //Utility for the tooltip of the custom CyberwareItem class
+            switch (type) {
+                case 0 :
+                    switch (tier) {
+                        case 1:
+                            if (Screen.hasShiftDown()) {
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.cyberleg_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.cyberleg1_shift2"));
 
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        case 2:
+                            if (Screen.hasShiftDown()) {
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_2"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.cyberleg_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.cyberleg2_shift2"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        case 3:
+                            if (Screen.hasShiftDown()) {
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_3"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.cyberleg_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.cyberleg3_shift2"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 1 :
+                    switch (tier) {
+                        case 1:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.endereye1_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.endereye1_shift2"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        case 2:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_2"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.endereye2_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.endereye2_shift2"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        case 3:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_3"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.endereye3_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.endereye3_shift2"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 2:
+                    switch (tier) {
+                        case 1:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.golemarm_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.golemarm1_shift2"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        case 2:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_2"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.golemarm_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.golemarm2_shift2"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        case 3:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_3"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.golemarm_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.golemarm3_shift2"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 3:
+                    switch (tier) {
+                        case 1:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.optical_camo1_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.optical_camo1_shift2"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        case 2:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_2"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.optical_camo2_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.optical_camo2_shift2"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        case 3:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_3"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.optical_camo3_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.optical_camo3_shift2"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 4:
+                    switch (tier) {
+                        case 1:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.subdermalarmor1_shift1"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        case 2:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_2"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.subdermalarmor2_shift1"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        case 3:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_3"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.subdermalarmor3_shift1"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 5:
+                    switch (tier) {
+                        case 1:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.wardenheart_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.wardenheart1_shift2"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.wardenheart1_shift3"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        case 2:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_2"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.wardenheart_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.wardenheart2_shift2"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.wardenheart2_shift3"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        case 3:
+                            if (Screen.hasShiftDown()){
+                                tooltip.add(Component.translatable("tooltip.aristysa.tier_3"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.wardenheart_shift1"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.wardenheart3_shift2"));
+                                tooltip.add(Component.translatable("tooltip.aristysa.wardenheart3_shift3"));
+
+                            } else {
+                                tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+            }
+        }
 
 
     }
-}
+
 

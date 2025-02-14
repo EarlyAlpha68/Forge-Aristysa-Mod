@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.earlyalpha.aristysa.block.ModBlocks;
 import net.earlyalpha.aristysa.item.ModCreativeTabs;
 import net.earlyalpha.aristysa.item.ModItems;
+import net.earlyalpha.aristysa.networking.ModMessages;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -39,6 +40,9 @@ public class Aristysa {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            ModMessages.register();
+        });
 
     }
 

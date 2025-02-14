@@ -35,6 +35,18 @@ public class ModCreativeTabs {
                         output.accept(ModItems.ENDEREYE_1.get());
                         output.accept(ModItems.ENDEREYE_2.get());
                         output.accept(ModItems.ENDEREYE_3.get());
+                        output.accept(ModItems.GOLEMARM_1.get());
+                        output.accept(ModItems.GOLEMARM_2.get());
+                        output.accept(ModItems.GOLEMARM_3.get());
+                        output.accept(ModItems.OPTICAL_CAMO_1.get());
+                        output.accept(ModItems.OPTICAL_CAMO_2.get());
+                        output.accept(ModItems.OPTICAL_CAMO_3.get());
+                        output.accept(ModItems.SUBDERMAL_ARMOR_1.get());
+                        output.accept(ModItems.SUBDERMAL_ARMOR_2.get());
+                        output.accept(ModItems.SUBDERMAL_ARMOR_3.get());
+                        output.accept(ModItems.WARDEN_HEART_1.get());
+                        output.accept(ModItems.WARDEN_HEART_2.get());
+                        output.accept(ModItems.WARDEN_HEART_3.get());
                     })
                     .build());
 

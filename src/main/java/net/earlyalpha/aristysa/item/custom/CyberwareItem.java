@@ -8,12 +8,17 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.inventory.tooltip.TooltipComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.extensions.IForgeItem;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -48,25 +53,27 @@ public class CyberwareItem extends Item {
         return InteractionResultHolder.success(player.getItemInHand(usedHand));
     }
 
-    private static void alreadyHasIt(Player player,int implantTier, int tiers, String key) {
+    private static void alreadyHasIt(Player player, int tiers,int implantTier, String key) {
 
         int implantType = EarlyUtil.getImplantType(key);
         player.sendSystemMessage(Component.literal("implanTier = " + implantTier + "your tier = " + tiers));
         if ((implantTier == 1 && (!(tiers == 1)))) {
-            if (!player.getInventory().add(EarlyUtil.CyberwareItemstack(implantType, 1))) {
-                player.drop(EarlyUtil.CyberwareItemstack(implantType, 1), false);
-            }
+            player.getInventory().add(EarlyUtil.CyberwareItemstack(implantType, 1));
+            player.sendSystemMessage(Component.literal("1"));
+        } else if ((implantTier == 2 && (!(tiers == 2)))) {
+            player.getInventory().add(EarlyUtil.CyberwareItemstack(implantType, 2));
+            player.sendSystemMessage(Component.literal("2"));
+        } else if ((implantTier == 3 && (!(tiers == 3)))) {
+            player.getInventory().add(EarlyUtil.CyberwareItemstack(implantType, 3));
+            player.sendSystemMessage(Component.literal("3"));
         }
-        if ((implantTier == 2 && (!(tiers == 2)))) {
-            if (!player.getInventory().add(EarlyUtil.CyberwareItemstack(implantType, 2))) {
-                player.drop(EarlyUtil.CyberwareItemstack(implantType, 2), false);
-            }
-        }
-        if ((implantTier == 3 && (!(tiers == 3)))) {
-            if (!player.getInventory().add(EarlyUtil.CyberwareItemstack(implantType, 3))) {
-                player.drop(EarlyUtil.CyberwareItemstack(implantType, 3), false);
-            }
-        }
+    }
 
+    @Override
+    public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
+        EarlyUtil.cyberwareItemToolTip(pTooltipComponents,this.tier,EarlyUtil.getImplantType(this.key));
+        super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
 }
+
+

@@ -1,4 +1,4 @@
-// 1.20.1	2025-02-14T11:13:40.0898218	Item Models: aristysa
+// 1.20.1	2025-02-14T20:51:05.2746756	Item Models: aristysa
 eec53d406b23c7d6393d856142417ce4be10f60a assets/aristysa/models/item/aluminum_ingot.json
 baf2b8975eb967c7e816ba31317ac364506e29fd assets/aristysa/models/item/cyberleg_1.json
 ff57ca7d1aba3753bf3baa45ccf9834c654c98b1 assets/aristysa/models/item/cyberleg_2.json
@@ -6,6 +6,18 @@ c2adc562f78d86cb21b87bf2399975137804ecbc assets/aristysa/models/item/cyberleg_3.
 997a4e1b8f31313496b924b3f41012b170b981e3 assets/aristysa/models/item/endereye_1.json
 de5753952867f4437e6e5c45364f6099c182268f assets/aristysa/models/item/endereye_2.json
 6548d1bc6d72f08b496590142d92de1eaf09912b assets/aristysa/models/item/endereye_3.json
+bccdcc3a2a2d50175f352f14c847624cecdcc714 assets/aristysa/models/item/golemarm_1.json
+d9cc2825f6f914540bfeafd852f5aa2224d397e9 assets/aristysa/models/item/golemarm_2.json
+80843e8dd8a47baa71554d8026574b2b463bb34a assets/aristysa/models/item/golemarm_3.json
 d8f4bf2ea249963dc77589f89bd63ccb67cc32b3 assets/aristysa/models/item/lead_ingot.json
+ab48352ebdd35705a93453cbf192ea84286332ad assets/aristysa/models/item/optical_camo_1.json
+4bc926c6d10a09add69e362b884600f78275d1c1 assets/aristysa/models/item/optical_camo_2.json
+5d388dd6e5c50227e028e34a5e64b4c64f849b0b assets/aristysa/models/item/optical_camo_3.json
 643448bdae7d94ef9e54c229338057550c239577 assets/aristysa/models/item/raw_aluminum.json
 209d3b6c9dca6c1035f85b21bd3f628d031c3728 assets/aristysa/models/item/raw_lead.json
+b9c07930b0c205aa5f875be550d600cc6bf1ac4e assets/aristysa/models/item/subdermal_armor_1.json
+2dd32b17015306e6324772a48842ffdf2b527cf1 assets/aristysa/models/item/subdermal_armor_2.json
+04b84d20ca0d312985727f52b59be67f8c9c508f assets/aristysa/models/item/subdermal_armor_3.json
+c2b43ef8c5b4d66eb8e9b05b666c0dc2d954fc41 assets/aristysa/models/item/wardenheart_1.json
+4ecc96b2328a0de03962d97e25ea75b5ae34709c assets/aristysa/models/item/wardenheart_2.json
+4e2397e7424cfcdf8785ed2e7d97a15aff4082b7 assets/aristysa/models/item/wardenheart_3.json
