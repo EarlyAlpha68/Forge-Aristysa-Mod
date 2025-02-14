@@ -21,6 +21,13 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RAW_LEAD);
         simpleItem(ModItems.ALUMINUM_INGOT);
         simpleItem(ModItems.RAW_ALUMINUM);
+        simpleItem(ModItems.ENDEREYE_1);
+        simpleItem(ModItems.ENDEREYE_2);
+        simpleItem(ModItems.ENDEREYE_3);
+        simpleItem(ModItems.CYBERLEG_1);
+        simpleItem(ModItems.CYBERLEG_2);
+        simpleItem(ModItems.CYBERLEG_3);
+
 
     }
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

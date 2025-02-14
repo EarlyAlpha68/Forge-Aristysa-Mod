@@ -1,5 +1,11 @@
-// 1.20.1	2025-02-13T08:42:06.4287726	Item Models: aristysa
+// 1.20.1	2025-02-14T11:13:40.0898218	Item Models: aristysa
 eec53d406b23c7d6393d856142417ce4be10f60a assets/aristysa/models/item/aluminum_ingot.json
+baf2b8975eb967c7e816ba31317ac364506e29fd assets/aristysa/models/item/cyberleg_1.json
+ff57ca7d1aba3753bf3baa45ccf9834c654c98b1 assets/aristysa/models/item/cyberleg_2.json
+c2adc562f78d86cb21b87bf2399975137804ecbc assets/aristysa/models/item/cyberleg_3.json
+997a4e1b8f31313496b924b3f41012b170b981e3 assets/aristysa/models/item/endereye_1.json
+de5753952867f4437e6e5c45364f6099c182268f assets/aristysa/models/item/endereye_2.json
+6548d1bc6d72f08b496590142d92de1eaf09912b assets/aristysa/models/item/endereye_3.json
 d8f4bf2ea249963dc77589f89bd63ccb67cc32b3 assets/aristysa/models/item/lead_ingot.json
 643448bdae7d94ef9e54c229338057550c239577 assets/aristysa/models/item/raw_aluminum.json
 209d3b6c9dca6c1035f85b21bd3f628d031c3728 assets/aristysa/models/item/raw_lead.json

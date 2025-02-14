@@ -29,6 +29,12 @@ public class ModCreativeTabs {
                         output.accept(ModItems.RAW_ALUMINUM.get());
                         output.accept(ModBlocks.ALUMINUM_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_ALUMINUM_ORE.get());
+                        output.accept(ModItems.CYBERLEG_1.get());
+                        output.accept(ModItems.CYBERLEG_2.get());
+                        output.accept(ModItems.CYBERLEG_3.get());
+                        output.accept(ModItems.ENDEREYE_1.get());
+                        output.accept(ModItems.ENDEREYE_2.get());
+                        output.accept(ModItems.ENDEREYE_3.get());
                     })
                     .build());
 
