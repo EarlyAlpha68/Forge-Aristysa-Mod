@@ -31,20 +31,19 @@ public class CyberwareItem extends Item {
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand usedHand) {
         AtomicBoolean tierHolder = new AtomicBoolean(false);
-        player.getCapability(PlayerCyberwareTierProvider.PLAYER_CYBERWARE_TIER).ifPresent(playerCyberwareTier -> {
+
             if (!world.isClientSide()) {
-                if (!(playerCyberwareTier.getTier(key) == this.tier)) {
-                    alreadyHasIt(player,this.tier, playerCyberwareTier.getTier(this.key), this.key);
-                    playerCyberwareTier.setTier(this.tier,this.key);
-                    player.sendSystemMessage(Component.literal("You successfully implant yourself an " + EarlyUtil.getImplantName(this.key)+" tier " + playerCyberwareTier.getTier(key)));
+                if (!(EarlyUtil.getImplantTier(player,this.key) == this.tier)) {
+                    alreadyHasIt(player,this.tier, EarlyUtil.getImplantTier(player,this.key), this.key);
+                    EarlyUtil.setImplantTier(player,this.key,this.tier);
+                    player.sendSystemMessage(Component.literal("You successfully implant yourself an " + EarlyUtil.getImplantName(this.key)+" tier " + EarlyUtil.getImplantTier(player,key)));
                     ItemStack itemStack = player.getItemInHand(usedHand);
                     itemStack.shrink(1);
                     player.setItemInHand(usedHand,itemStack );
                 } else {
-                    player.sendSystemMessage(Component.literal("You already have an " + EarlyUtil.getImplantName(this.key)+ " tier " + playerCyberwareTier.getTier(key)));
+                    player.sendSystemMessage(Component.literal("You already have an " + EarlyUtil.getImplantName(this.key)+ " tier " + EarlyUtil.getImplantTier(player,key)));
                 }
             }
-        });
 
         return InteractionResultHolder.success(player.getItemInHand(usedHand));
     }
@@ -52,7 +51,7 @@ public class CyberwareItem extends Item {
     private static void alreadyHasIt(Player player,int implantTier, int tiers, String key) {
 
         int implantType = EarlyUtil.getImplantType(key);
-        player.getInventory().add(ModItems.ALUMINUM_INGOT.get().getDefaultInstance());
+        player.sendSystemMessage(Component.literal("implanTier = " + implantTier + "your tier = " + tiers));
         if ((implantTier == 1 && (!(tiers == 1)))) {
             if (!player.getInventory().add(EarlyUtil.CyberwareItemstack(implantType, 1))) {
                 player.drop(EarlyUtil.CyberwareItemstack(implantType, 1), false);

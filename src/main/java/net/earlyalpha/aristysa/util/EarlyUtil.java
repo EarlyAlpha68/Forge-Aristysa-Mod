@@ -7,6 +7,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 
 import java.util.HashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class EarlyUtil {
     public static HashMap<String, Integer> implantType = new HashMap<>();
@@ -47,6 +48,18 @@ public class EarlyUtil {
     public static int getSyringeType(String key) {
         return syringeType.getOrDefault(key, -1);
         //give the attached number of order of a specific implant
+    }
+    public static int getImplantTier(Player player,String key) {
+        AtomicInteger tierHolder = new AtomicInteger();
+        player.getCapability(PlayerCyberwareTierProvider.PLAYER_CYBERWARE_TIER).ifPresent(playerCyberwareTier -> {
+            tierHolder.set(playerCyberwareTier.getTier(key));
+        });
+        return tierHolder.get();
+    }
+    public static void setImplantTier(Player player,String key,int tier) {
+        player.getCapability(PlayerCyberwareTierProvider.PLAYER_CYBERWARE_TIER).ifPresent(playerCyberwareTier -> {
+            playerCyberwareTier.setTier(tier,key);
+        });
     }
 
     public static ItemStack CyberwareItemstack(int implantType, int implantTier) {
