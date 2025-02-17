@@ -56,16 +56,12 @@ public class CyberwareItem extends Item {
     private static void alreadyHasIt(Player player, int tiers,int implantTier, String key) {
 
         int implantType = EarlyUtil.getImplantType(key);
-        player.sendSystemMessage(Component.literal("implanTier = " + implantTier + "your tier = " + tiers));
         if ((implantTier == 1 && (!(tiers == 1)))) {
             player.getInventory().add(EarlyUtil.CyberwareItemstack(implantType, 1));
-            player.sendSystemMessage(Component.literal("1"));
         } else if ((implantTier == 2 && (!(tiers == 2)))) {
             player.getInventory().add(EarlyUtil.CyberwareItemstack(implantType, 2));
-            player.sendSystemMessage(Component.literal("2"));
         } else if ((implantTier == 3 && (!(tiers == 3)))) {
             player.getInventory().add(EarlyUtil.CyberwareItemstack(implantType, 3));
-            player.sendSystemMessage(Component.literal("3"));
         }
     }
 

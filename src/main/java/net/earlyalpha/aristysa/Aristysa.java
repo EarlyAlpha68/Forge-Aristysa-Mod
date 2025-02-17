@@ -2,9 +2,12 @@ package net.earlyalpha.aristysa;
 
 import com.mojang.logging.LogUtils;
 import net.earlyalpha.aristysa.block.ModBlocks;
+import net.earlyalpha.aristysa.effect.ModEffects;
 import net.earlyalpha.aristysa.item.ModCreativeTabs;
 import net.earlyalpha.aristysa.item.ModItems;
 import net.earlyalpha.aristysa.networking.ModMessages;
+import net.earlyalpha.aristysa.screen.ModMenuTypes;
+import net.earlyalpha.aristysa.screen.ModScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -31,25 +34,21 @@ public class Aristysa {
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModEffects.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
-
-        modEventBus.addListener(this::addCreative);
 
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ModMessages.register();
+            ModScreens.register();
         });
 
     }
-
-    private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
-    }
-
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
 

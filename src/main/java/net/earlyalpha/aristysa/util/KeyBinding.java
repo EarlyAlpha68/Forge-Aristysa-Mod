@@ -16,8 +16,8 @@ public class KeyBinding {
             InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_KP_0, KEY_CATEGORY_ARISTYSA);
     public static final KeyMapping ENDER_EYE_USE = new KeyMapping(KEY_ENDER_EYE_USE, KeyConflictContext.IN_GAME,
             InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_KP_1, KEY_CATEGORY_ARISTYSA);
-    public static final KeyMapping CYBERLEG_USE = new KeyMapping(KEY_CYBERLEG_USE, KeyConflictContext.IN_GAME,
-            InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_KP_2, KEY_CATEGORY_ARISTYSA);
+    public static final KeyMapping CYBERLEG_USE = new KeyMapping(KEY_CYBERLEG_USE, KeyConflictContext.UNIVERSAL,
+            InputConstants.Type.MOUSE, GLFW.GLFW_MOUSE_BUTTON_5, KEY_CATEGORY_ARISTYSA);
     public static final KeyMapping CYBER_IMPLANT_SCREEN_OPEN = new KeyMapping(KEY_CYBER_IMPLANT_SCREEN_OPEN, KeyConflictContext.IN_GAME,
             InputConstants.Type.KEYSYM, GLFW.GLFW_KEY_KP_3, KEY_CATEGORY_ARISTYSA);
 }

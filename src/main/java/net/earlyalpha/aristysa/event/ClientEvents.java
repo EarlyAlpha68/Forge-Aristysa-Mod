@@ -1,10 +1,20 @@
 package net.earlyalpha.aristysa.event;
 
+import com.mojang.blaze3d.platform.InputConstants;
 import net.earlyalpha.aristysa.Aristysa;
 import net.earlyalpha.aristysa.networking.ModMessages;
 import net.earlyalpha.aristysa.networking.packet.CyberLegC2SPacket;
+import net.earlyalpha.aristysa.networking.packet.CyberwareSyncCallC2SPacket;
+import net.earlyalpha.aristysa.networking.packet.EnderEyeC2SPacket;
+import net.earlyalpha.aristysa.networking.packet.OpticalCamoC2SPacket;
+import net.earlyalpha.aristysa.screen.CyberwareGuiMenuType;
+import net.earlyalpha.aristysa.screen.CyberwareGuiScreen;
+import net.earlyalpha.aristysa.screen.ModMenuTypes;
+import net.earlyalpha.aristysa.util.EarlyUtil;
 import net.earlyalpha.aristysa.util.KeyBinding;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.vehicle.Minecart;
 import net.minecraft.world.phys.Vec3;
@@ -20,19 +30,37 @@ public class ClientEvents {
 
         @SubscribeEvent
         public static void onKeyInput(InputEvent.Key event) {
-            if (KeyBinding.OPTICAL_CAMO_USE.consumeClick()) {
-
+            if (KeyBinding.OPTICAL_CAMO_USE.consumeClick() && KeyBinding.OPTICAL_CAMO_USE.getKey().getType() != InputConstants.Type.MOUSE) {
+                ModMessages.sendToServer(new OpticalCamoC2SPacket());
             }
-            if (KeyBinding.ENDER_EYE_USE.consumeClick()) {
-
+            if (KeyBinding.ENDER_EYE_USE.consumeClick() && KeyBinding.ENDER_EYE_USE.getKey().getType() != InputConstants.Type.MOUSE) {
+                ModMessages.sendToServer(new EnderEyeC2SPacket());
             }
-            if (KeyBinding.CYBERLEG_USE.consumeClick()) {
+            if (KeyBinding.CYBERLEG_USE.consumeClick() && KeyBinding.CYBERLEG_USE.getKey().getType() != InputConstants.Type.MOUSE) {
                 ModMessages.sendToServer(new CyberLegC2SPacket());
             }
-            if (KeyBinding.CYBER_IMPLANT_SCREEN_OPEN.consumeClick()) {
+            if (KeyBinding.CYBER_IMPLANT_SCREEN_OPEN.consumeClick() && KeyBinding.CYBER_IMPLANT_SCREEN_OPEN.getKey().getType() != InputConstants.Type.MOUSE) {
 
             }
         }
+        @SubscribeEvent
+        public static void onMouseInput(InputEvent.MouseButton event) {
+            if (KeyBinding.OPTICAL_CAMO_USE.consumeClick() && KeyBinding.OPTICAL_CAMO_USE.getKey().getType() != InputConstants.Type.KEYSYM) {
+                ModMessages.sendToServer(new OpticalCamoC2SPacket());
+            }
+            if (KeyBinding.ENDER_EYE_USE.consumeClick() && KeyBinding.ENDER_EYE_USE.getKey().getType() != InputConstants.Type.KEYSYM) {
+                ModMessages.sendToServer(new EnderEyeC2SPacket());
+            }
+            if (KeyBinding.CYBERLEG_USE.consumeClick() && KeyBinding.CYBERLEG_USE.getKey().getType() != InputConstants.Type.KEYSYM) {
+                ModMessages.sendToServer(new CyberLegC2SPacket());
+            }
+            if (KeyBinding.CYBER_IMPLANT_SCREEN_OPEN.consumeClick() && KeyBinding.CYBER_IMPLANT_SCREEN_OPEN.getKey().getType() != InputConstants.Type.KEYSYM) {
+                CyberwareGuiMenuType pMenu = new CyberwareGuiMenuType(0,Minecraft.getInstance().player.getInventory());
+                ModMessages.sendToServer(new CyberwareSyncCallC2SPacket());
+                Minecraft.getInstance().setScreen(new CyberwareGuiScreen(pMenu ,Minecraft.getInstance().player.getInventory(), Component.nullToEmpty("test")));
+            }
+        }
+
 
     }
     @Mod.EventBusSubscriber(modid = Aristysa.MOD_ID, value = Dist.CLIENT,bus = Mod.EventBusSubscriber.Bus.MOD)
