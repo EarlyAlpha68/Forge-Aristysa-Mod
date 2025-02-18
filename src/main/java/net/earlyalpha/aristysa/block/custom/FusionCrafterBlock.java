@@ -76,8 +76,5 @@ public class FusionCrafterBlock extends BaseEntityBlock {
         }
         return createTickerHelper(pBlockEntityType, ModBlockEntities.FUSION_CRAFTER_BE.get(),
                 (level, blockPos, blockState, fusionCrafterBlockEntity) -> fusionCrafterBlockEntity.tick(level,blockPos,blockState));
-
-
-        return super.getTicker(pLevel, pState, pBlockEntityType);
     }
 }
