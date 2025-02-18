@@ -1,6 +1,7 @@
 package net.earlyalpha.aristysa.block;
 
 import net.earlyalpha.aristysa.Aristysa;
+import net.earlyalpha.aristysa.block.custom.FusionCrafterBlock;
 import net.earlyalpha.aristysa.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -31,6 +32,8 @@ public class ModBlocks {
     public static final RegistryObject<Block> DEEPSLATE_ALUMINUM_ORE = registerBlock("deepslate_aluminum_ore",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE_IRON_ORE)));
 
+    public static final RegistryObject<Block> FUSION_CRAFTER = registerBlock("fusion_crafter",
+            () -> new FusionCrafterBlock(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)));
 
 
 
