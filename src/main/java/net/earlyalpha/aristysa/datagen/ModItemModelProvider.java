@@ -20,6 +20,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.LEAD_INGOT);
         simpleItem(ModItems.RAW_LEAD);
         simpleItem(ModItems.ALUMINUM_INGOT);
+        simpleItem(ModItems.ALUMINUM_PLATE);
         simpleItem(ModItems.RAW_ALUMINUM);
         simpleItem(ModItems.ENDEREYE_1);
         simpleItem(ModItems.ENDEREYE_2);

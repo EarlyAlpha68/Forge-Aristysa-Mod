@@ -94,7 +94,6 @@ public class CyberwareGuiScreen extends AbstractContainerScreen<CyberwareGuiMenu
         poseStack.translate(x, y, 50.0);
         poseStack.scale(size, size, -size);
         poseStack.mulPose(quaternionf);
-
         // Set light source from the bottom
         int light = 0xF000F0; // Maximum brightness
 

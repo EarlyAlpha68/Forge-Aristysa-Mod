@@ -1,7 +1,8 @@
-// 1.20.1	2025-02-13T08:49:47.3416183	Loot Tables
+// 1.20.1	2025-02-18T13:04:37.7529743	Loot Tables
 030fe53f9e3a0cd6f373b16638672b59f05ea18c data/aristysa/loot_tables/blocks/aluminum_ore.json
 ce5f65dc1711eda416e94284f73d0bc669b5f91b data/aristysa/loot_tables/blocks/deepslate_aluminum_ore.json
 de8e92303e1c9bce10637a33d568c69354bab54d data/aristysa/loot_tables/blocks/deepslate_lead_ore.json
+2edea5c0307b05b26a8ba7c4a3e4e94489840640 data/aristysa/loot_tables/blocks/fusion_crafter.json
 556d56ac6ab0bcfa7a21aa42145520822fc016c5 data/aristysa/loot_tables/blocks/lead_block.json
 eae9b76c9942f43fdf3c1879ebf70e2758fb53c8 data/aristysa/loot_tables/blocks/lead_ore.json
 cf9ceb094e68ee7f0ba7f55a8c6d4ed7ea1973f8 data/aristysa/loot_tables/blocks/raw_lead_block.json

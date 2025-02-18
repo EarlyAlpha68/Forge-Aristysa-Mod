@@ -20,6 +20,8 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ALUMINUM_INGOT = ITEMS.register("aluminum_ingot",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ALUMINUM_PLATE = ITEMS.register("aluminum_plate",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> CYBERLEG_1 = ITEMS.register("cyberleg_1",
             () -> new CyberwareItem(new Item.Properties(),1,"cyberLegTier"));
     public static final RegistryObject<Item> CYBERLEG_2 = ITEMS.register("cyberleg_2",

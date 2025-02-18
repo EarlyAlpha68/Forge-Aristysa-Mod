@@ -2,6 +2,7 @@ package net.earlyalpha.aristysa;
 
 import com.mojang.logging.LogUtils;
 import net.earlyalpha.aristysa.block.ModBlocks;
+import net.earlyalpha.aristysa.block.entity.ModBlockEntities;
 import net.earlyalpha.aristysa.effect.ModEffects;
 import net.earlyalpha.aristysa.item.ModCreativeTabs;
 import net.earlyalpha.aristysa.item.ModItems;
@@ -35,6 +36,7 @@ public class Aristysa {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModEffects.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
 

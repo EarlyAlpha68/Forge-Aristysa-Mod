@@ -19,6 +19,8 @@ public class ModCreativeTabs {
             () -> CreativeModeTab.builder().icon(()-> new ItemStack(ModItems.LEAD_INGOT.get()))
                     .title(Component.translatable("creativetab.aristysa_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModBlocks.FUSION_CRAFTER.get());
+                        output.accept(ModItems.ALUMINUM_PLATE.get());
                         output.accept(ModItems.LEAD_INGOT.get());
                         output.accept(ModItems.RAW_LEAD.get());
                         output.accept(ModBlocks.LEAD_BLOCK.get());

@@ -18,9 +18,7 @@ import net.minecraftforge.common.extensions.IForgeItem;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.concurrent.atomic.AtomicInteger;
+
 
 
 public class CyberwareItem extends Item {
@@ -35,8 +33,6 @@ public class CyberwareItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level world, Player player, InteractionHand usedHand) {
-        AtomicBoolean tierHolder = new AtomicBoolean(false);
-
             if (!world.isClientSide()) {
                 if (!(EarlyUtil.getImplantTier(player,this.key) == this.tier)) {
                     alreadyHasIt(player,this.tier, EarlyUtil.getImplantTier(player,this.key), this.key);
