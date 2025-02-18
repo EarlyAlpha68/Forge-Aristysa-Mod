@@ -3,7 +3,6 @@ package net.earlyalpha.aristysa.networking.packet;
 import net.earlyalpha.aristysa.networking.ModMessages;
 import net.earlyalpha.aristysa.screen.CyberwareGuiMenuType;
 import net.earlyalpha.aristysa.util.EarlyUtil;
-import net.earlyalpha.aristysa.util.ImplantUsage;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
@@ -13,11 +12,11 @@ import net.minecraftforge.network.NetworkEvent;
 
 import java.util.function.Supplier;
 
-public class EnderEyeC2SPacket {
-    public EnderEyeC2SPacket() {
+public class CyberwareScreenC2SPacket {
+    public CyberwareScreenC2SPacket() {
 
     }
-    public EnderEyeC2SPacket(FriendlyByteBuf buf) {
+    public CyberwareScreenC2SPacket(FriendlyByteBuf buf) {
 
     }
     public void toBytes(FriendlyByteBuf buf) {
@@ -26,9 +25,13 @@ public class EnderEyeC2SPacket {
 
     public boolean handle(Supplier<NetworkEvent.Context> supplier) {
         NetworkEvent.Context context = supplier.get();
-        context.enqueueWork(() -> {
+        context.enqueueWork(() ->{
             ServerPlayer serverPlayer = context.getSender();
-            ImplantUsage.teleportEnderEyePlayer(serverPlayer);
+            CompoundTag nbt = EarlyUtil.playerNbtSyncProvider(serverPlayer);
+            ModMessages.sendToPlayer(new Cyberware_SyncS2CPacket(nbt),serverPlayer);
+            serverPlayer.openMenu(new SimpleMenuProvider(
+                    (containerId, playerInventory, player) -> new CyberwareGuiMenuType(containerId, playerInventory),
+                    Component.nullToEmpty("")));
         });
         return true;
     }

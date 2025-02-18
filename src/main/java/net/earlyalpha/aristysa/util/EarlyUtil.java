@@ -4,13 +4,12 @@ import net.earlyalpha.aristysa.capability.PlayerCyberwareTierProvider;
 import net.earlyalpha.aristysa.effect.ModEffects;
 import net.earlyalpha.aristysa.item.ModItems;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.protocol.game.ClientboundSetEntityMotionPacket;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -22,7 +21,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
@@ -84,6 +82,16 @@ public class EarlyUtil {
         player.getCapability(PlayerCyberwareTierProvider.PLAYER_CYBERWARE_TIER).ifPresent(playerCyberwareTier -> {
             playerCyberwareTier.setTier(tier,key);
         });
+    }
+    public static CompoundTag playerNbtSyncProvider(ServerPlayer serverPlayer) {
+        CompoundTag nbt = new CompoundTag();
+        nbt.putInt("cyberLegTier", EarlyUtil.getImplantTier(serverPlayer,"cyberLegTier"));
+        nbt.putInt("enderEyeTier",EarlyUtil.getImplantTier(serverPlayer,"enderEyeTier"));
+        nbt.putInt("golemArmTier",EarlyUtil.getImplantTier(serverPlayer,"golemArmTier"));
+        nbt.putInt("opticalCamoTier",EarlyUtil.getImplantTier(serverPlayer,"opticalCamoTier"));
+        nbt.putInt("subdermalArmorTier",EarlyUtil.getImplantTier(serverPlayer,"subdermalArmorTier"));
+        nbt.putInt("wardenHeartTier",EarlyUtil.getImplantTier(serverPlayer,"wardenHeartTier"));
+        return nbt;
     }
     public static void wardenHeartEffect(ServerPlayer player , int tier, LivingDeathEvent event) {
         int duration = getWardenHeartDuration(tier);

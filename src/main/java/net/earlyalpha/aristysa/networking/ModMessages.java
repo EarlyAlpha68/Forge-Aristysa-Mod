@@ -51,6 +51,12 @@ public class ModMessages {
                 .consumerMainThread(CyberwareSyncCallC2SPacket::handle)
                 .add();
 
+        net.messageBuilder(CyberwareScreenC2SPacket.class,id(), NetworkDirection.PLAY_TO_SERVER)
+                .decoder(CyberwareScreenC2SPacket::new)
+                .encoder(CyberwareScreenC2SPacket::toBytes)
+                .consumerMainThread(CyberwareScreenC2SPacket::handle)
+                .add();
+
 
         net.messageBuilder(Cyberware_SyncS2CPacket.class,id(), NetworkDirection.PLAY_TO_CLIENT)
                 .decoder(Cyberware_SyncS2CPacket::new)
@@ -58,6 +64,7 @@ public class ModMessages {
                 .consumerMainThread(Cyberware_SyncS2CPacket::handle)
                 .add();
     }
+
 
 
     public static <MSG> void sendToServer(MSG message) {
