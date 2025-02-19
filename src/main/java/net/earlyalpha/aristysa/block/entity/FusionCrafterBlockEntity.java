@@ -1,6 +1,7 @@
 package net.earlyalpha.aristysa.block.entity;
 
 import net.earlyalpha.aristysa.item.ModItems;
+import net.earlyalpha.aristysa.screen.FusionCrafterMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -103,7 +104,7 @@ public class FusionCrafterBlockEntity extends BlockEntity implements MenuProvide
 
     @Override
     public @Nullable AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
-        return null;
+        return new FusionCrafterMenu(i,inventory,this,this.data);
     }
 
     @Override
@@ -137,6 +138,9 @@ public class FusionCrafterBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private void craftItem() {
+        this.itemStackHandler.setStackInSlot(SLOT_1,ItemStack.EMPTY);
+        this.itemStackHandler.setStackInSlot(SLOT_2,ItemStack.EMPTY);
+        this.itemStackHandler.setStackInSlot(OUTPUT_SLOT,new ItemStack(ModItems.ALUMINUM_PLATE.get(),1));
 
     }
 
@@ -149,7 +153,7 @@ public class FusionCrafterBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private boolean hasRecipe() {
-         boolean hasCraftingItem = this.itemStackHandler.getStackInSlot(SLOT_1).getItem() == ModItems.ALUMINUM_INGOT.get();
+         boolean hasCraftingItem = this.itemStackHandler.getStackInSlot(SLOT_1).getItem() == ModItems.ALUMINUM_INGOT.get() && this.itemStackHandler.getStackInSlot(SLOT_2).getItem() == ModItems.ALUMINUM_INGOT.get();
          ItemStack result = new ItemStack(ModItems.ALUMINUM_PLATE.get());
          return hasCraftingItem && canInsertAmountIntoOutputSlot(result.getCount()) &&canInsertItemIntoOutputSlot(result.getItem().getDefaultInstance());
 
@@ -168,6 +172,7 @@ public class FusionCrafterBlockEntity extends BlockEntity implements MenuProvide
         return this.itemStackHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() ||
                 this.itemStackHandler.getStackInSlot(OUTPUT_SLOT).getCount() < this.itemStackHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
     }
+
 
     
 }

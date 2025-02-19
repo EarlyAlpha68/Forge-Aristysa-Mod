@@ -7,8 +7,11 @@ import net.earlyalpha.aristysa.effect.ModEffects;
 import net.earlyalpha.aristysa.item.ModCreativeTabs;
 import net.earlyalpha.aristysa.item.ModItems;
 import net.earlyalpha.aristysa.networking.ModMessages;
+import net.earlyalpha.aristysa.screen.CyberwareGuiScreen;
+import net.earlyalpha.aristysa.screen.FusionCrafterScreen;
 import net.earlyalpha.aristysa.screen.ModMenuTypes;
-import net.earlyalpha.aristysa.screen.ModScreens;
+
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -47,7 +50,6 @@ public class Aristysa {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             ModMessages.register();
-            ModScreens.register();
         });
 
     }
@@ -62,7 +64,8 @@ public class Aristysa {
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            MenuScreens.register(ModMenuTypes.FUSION_CRAFTER_MENU.get(), FusionCrafterScreen::new);
+            MenuScreens.register(ModMenuTypes.CYBERWARE_MENU.get(), CyberwareGuiScreen::new);
         }
     }
 }

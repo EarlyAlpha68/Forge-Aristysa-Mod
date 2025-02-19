@@ -21,7 +21,7 @@ public class FusionCrafterMenu extends AbstractContainerMenu {
         this(pContainerId,inventory,inventory.player.level().getBlockEntity(buf.readBlockPos()),new SimpleContainerData(2));
     }
     public FusionCrafterMenu(int pContainerId, Inventory inv, BlockEntity entity,ContainerData data) {
-        super(,pContainerId);
+        super(ModMenuTypes.FUSION_CRAFTER_MENU.get(),pContainerId);
         checkContainerSize(inv,3);
         blockEntity = ((FusionCrafterBlockEntity) entity);
         this.level = inv.player.level();
@@ -30,11 +30,11 @@ public class FusionCrafterMenu extends AbstractContainerMenu {
         addPlayerHotbar(inv);
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
             addSlot(new SlotItemHandler(iItemHandler,0,26,39));
-            addSlot(new SlotItemHandler(iItemHandler,2,134,39));
-            addSlot(new SlotItemHandler(iItemHandler,1,80,39));
+            addSlot(new SlotItemHandler(iItemHandler,1,134,39));
+            addSlot(new SlotItemHandler(iItemHandler,2,80,39));
         });
 
-        addDataSlot(data);
+        addDataSlots(data);
 
     }
 

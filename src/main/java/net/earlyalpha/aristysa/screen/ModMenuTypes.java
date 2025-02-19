@@ -17,6 +17,8 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<CyberwareGuiMenuType>> CYBERWARE_MENU =
             registerMenuType("cyberware_menu", CyberwareGuiMenuType::new);
+    public static final RegistryObject<MenuType<FusionCrafterMenu>> FUSION_CRAFTER_MENU =
+            registerMenuType("fusion_crafter_menu",FusionCrafterMenu::new);
 
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name, IContainerFactory<T> factory) {
