@@ -39,7 +39,12 @@ public class FusionCrafterScreen extends AbstractContainerScreen<FusionCrafterMe
         context.blit(TEXTURE,x,y,32,0,imageWidth,imageHeight);
 
         renderProgressArrow(context,x,y);
-        this.renderTooltip(context, i, i1);
+    }
+    @Override
+    public void render(GuiGraphics guiGraphics, int mouseX, int mouseY, float delta) {
+        this.renderBackground(guiGraphics);
+        super.render(guiGraphics, mouseX, mouseY, delta);
+        this.renderTooltip(guiGraphics, mouseX, mouseY);
     }
 
     private void renderProgressArrow(GuiGraphics context, int x, int y) {

@@ -21,6 +21,15 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.RAW_LEAD);
         simpleItem(ModItems.ALUMINUM_INGOT);
         simpleItem(ModItems.ALUMINUM_PLATE);
+        simpleItem(ModItems.LEAD_PLATE);
+        simpleItem(ModItems.CONDUCTIVE_PASTE);
+        simpleItem(ModItems.SHEATHE);
+        simpleItem(ModItems.WITHER_COMPOUND);
+        simpleItem(ModItems.EMPTY_SYRINGE);
+        simpleItem(ModItems.WIRE);
+        simpleItem(ModItems.OPTICAL_FIBER);
+        simpleItem(ModItems.SYNTHETIC_MUSCLE);
+        simpleItem(ModItems.MICRO_CHIP);
         simpleItem(ModItems.RAW_ALUMINUM);
         simpleItem(ModItems.ENDEREYE_1);
         simpleItem(ModItems.ENDEREYE_2);

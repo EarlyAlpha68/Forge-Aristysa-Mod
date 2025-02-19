@@ -23,6 +23,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.LEAD_BLOCK.get());
         this.dropSelf(ModBlocks.RAW_LEAD_BLOCK.get());
         this.dropSelf(ModBlocks.FUSION_CRAFTER.get());
+        this.dropSelf(ModBlocks.LABOTARY_TRAY.get());
 
         this.add(ModBlocks.ALUMINUM_ORE.get(),
                 block -> createOreDrop(ModBlocks.ALUMINUM_ORE.get(), ModItems.RAW_ALUMINUM.get()));

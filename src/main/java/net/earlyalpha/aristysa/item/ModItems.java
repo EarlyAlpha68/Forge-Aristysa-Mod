@@ -2,6 +2,7 @@ package net.earlyalpha.aristysa.item;
 
 import net.earlyalpha.aristysa.Aristysa;
 import net.earlyalpha.aristysa.item.custom.CyberwareItem;
+import net.earlyalpha.aristysa.item.custom.SyringeItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -22,6 +23,36 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ALUMINUM_PLATE = ITEMS.register("aluminum_plate",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> LEAD_PLATE = ITEMS.register("lead_plate",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> MICRO_CHIP = ITEMS.register("micro_chip",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SYNTHETIC_MUSCLE = ITEMS.register("synthetic_muscle",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> OPTICAL_FIBER = ITEMS.register("optical_fiber",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> WIRE = ITEMS.register("wire",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> EMPTY_SYRINGE = ITEMS.register("empty_syringe",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> WITHER_COMPOUND = ITEMS.register("wither_compound",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> SHEATHE = ITEMS.register("sheathe",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CONDUCTIVE_PASTE = ITEMS.register("conductive_paste",
+            () -> new Item(new Item.Properties()));
+
+    public static final RegistryObject<Item> CRIMSON_LACE = ITEMS.register("crimson_lace",
+            () -> new SyringeItem(new Item.Properties(),"crimsonLace"));
+    public static final RegistryObject<Item> PHANTOM_ELIXIR = ITEMS.register("phantom_elixir",
+            () -> new SyringeItem(new Item.Properties(),"phantomElixir"));
+    public static final RegistryObject<Item> SHADOW_HASTE = ITEMS.register("shadow_haste",
+            () -> new SyringeItem(new Item.Properties(),"shadowHaste"));
+
+
+
+
+
     public static final RegistryObject<Item> CYBERLEG_1 = ITEMS.register("cyberleg_1",
             () -> new CyberwareItem(new Item.Properties(),1,"cyberLegTier"));
     public static final RegistryObject<Item> CYBERLEG_2 = ITEMS.register("cyberleg_2",

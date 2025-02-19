@@ -2,6 +2,8 @@ package net.earlyalpha.aristysa.datagen;
 
 import net.earlyalpha.aristysa.Aristysa;
 import net.earlyalpha.aristysa.block.ModBlocks;
+import net.earlyalpha.aristysa.datagen.recipe.FusionCrafterRecipeBuilder;
+import net.earlyalpha.aristysa.datagen.recipe.LabotaryTrayRecipeBuilder;
 import net.earlyalpha.aristysa.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -57,8 +59,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.RAW_LEAD_BLOCK.get())
                 .unlockedBy(getHasName(ModBlocks.RAW_LEAD_BLOCK.get()),has(ModBlocks.RAW_LEAD_BLOCK.get()))
                 .save(pWriter);
-
+        new FusionCrafterRecipeBuilder(new ItemLike[]{ModItems.ALUMINUM_INGOT.get(), ModItems.ALUMINUM_INGOT.get()},
+                ModItems.ALUMINUM_PLATE.get(), 1).save(pWriter, "aluminum_plate");
+        new LabotaryTrayRecipeBuilder(new ItemLike[]{ModItems.ALUMINUM_INGOT.get(), ModItems.ALUMINUM_INGOT.get()},
+                ModItems.ALUMINUM_PLATE.get(), 1).save(pWriter, "aluminum_plate");
     }
+
+
     protected static void oreSmelting(Consumer<FinishedRecipe> pFinishedRecipeConsumer, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult, float pExperience, int pCookingTIme, String pGroup) {
         oreCooking(pFinishedRecipeConsumer, RecipeSerializer.SMELTING_RECIPE, pIngredients, pCategory, pResult, pExperience, pCookingTIme, pGroup, "_from_smelting");
     }

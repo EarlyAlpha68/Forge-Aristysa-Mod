@@ -13,6 +13,8 @@ public class ModRecipes {
 
     public static final RegistryObject<RecipeSerializer<FusionCrafterRecipe>> FUSION_CRAFTER =
             SERIALIZERS.register("fusion_crafting", () -> FusionCrafterRecipe.Serializer.INSTANCE);
+    public static final RegistryObject<RecipeSerializer<LabotaryTrayRecipe>> LABOTARY_TRAY =
+            SERIALIZERS.register("labotary_tray_craft", () -> LabotaryTrayRecipe.Serializer.INSTANCE);
 
 
     public static void register(IEventBus eventBus) {

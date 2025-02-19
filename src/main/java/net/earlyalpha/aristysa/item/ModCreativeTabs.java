@@ -20,17 +20,30 @@ public class ModCreativeTabs {
                     .title(Component.translatable("creativetab.aristysa_tab"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModBlocks.FUSION_CRAFTER.get());
-                        output.accept(ModItems.ALUMINUM_PLATE.get());
+                        output.accept(ModBlocks.LABOTARY_TRAY.get());
                         output.accept(ModItems.LEAD_INGOT.get());
                         output.accept(ModItems.RAW_LEAD.get());
                         output.accept(ModBlocks.LEAD_BLOCK.get());
                         output.accept(ModBlocks.RAW_LEAD_BLOCK.get());
                         output.accept(ModBlocks.LEAD_ORE.get());
+                        output.accept(ModItems.LEAD_PLATE.get());
                         output.accept(ModBlocks.DEEPSLATE_LEAD_ORE.get());
                         output.accept(ModItems.ALUMINUM_INGOT.get());
+                        output.accept(ModItems.ALUMINUM_PLATE.get());
                         output.accept(ModItems.RAW_ALUMINUM.get());
                         output.accept(ModBlocks.ALUMINUM_ORE.get());
                         output.accept(ModBlocks.DEEPSLATE_ALUMINUM_ORE.get());
+                        output.accept(ModItems.MICRO_CHIP.get());
+                        output.accept(ModItems.SYNTHETIC_MUSCLE.get());
+                        output.accept(ModItems.OPTICAL_FIBER.get());
+                        output.accept(ModItems.WIRE.get());
+                        output.accept(ModItems.EMPTY_SYRINGE.get());
+                        output.accept(ModItems.WITHER_COMPOUND.get());
+                        output.accept(ModItems.SHEATHE.get());
+                        output.accept(ModItems.CONDUCTIVE_PASTE.get());
+                        output.accept(ModItems.CRIMSON_LACE.get());
+                        output.accept(ModItems.PHANTOM_ELIXIR.get());
+                        output.accept(ModItems.SHADOW_HASTE.get());
                         output.accept(ModItems.CYBERLEG_1.get());
                         output.accept(ModItems.CYBERLEG_2.get());
                         output.accept(ModItems.CYBERLEG_3.get());

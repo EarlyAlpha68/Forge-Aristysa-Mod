@@ -10,13 +10,13 @@ import net.earlyalpha.aristysa.networking.ModMessages;
 import net.earlyalpha.aristysa.recipe.ModRecipes;
 import net.earlyalpha.aristysa.screen.CyberwareGuiScreen;
 import net.earlyalpha.aristysa.screen.FusionCrafterScreen;
+import net.earlyalpha.aristysa.screen.LabotaryTrayScreen;
 import net.earlyalpha.aristysa.screen.ModMenuTypes;
 
+import net.earlyalpha.aristysa.util.ModItemProperties;
 import net.minecraft.client.gui.screens.MenuScreens;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -68,6 +68,8 @@ public class Aristysa {
         public static void onClientSetup(FMLClientSetupEvent event) {
             MenuScreens.register(ModMenuTypes.FUSION_CRAFTER_MENU.get(), FusionCrafterScreen::new);
             MenuScreens.register(ModMenuTypes.CYBERWARE_MENU.get(), CyberwareGuiScreen::new);
+            MenuScreens.register(ModMenuTypes.LABOTARY_TRAY_MENU.get(), LabotaryTrayScreen::new);
+            ModItemProperties.register();
         }
     }
 }

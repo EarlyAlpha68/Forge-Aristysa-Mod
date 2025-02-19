@@ -19,6 +19,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
@@ -82,6 +83,28 @@ public class EarlyUtil {
         player.getCapability(PlayerCyberwareTierProvider.PLAYER_CYBERWARE_TIER).ifPresent(playerCyberwareTier -> {
             playerCyberwareTier.setTier(tier,key);
         });
+    }
+    public static void SyringeInject(LivingEntity player, String key) {
+        //Utility for the effect of the custom SyringeItem class
+        switch (getSyringeType(key)) {
+            case 0 :
+                player.addEffect(new MobEffectInstance(ModEffects.CRIMSON_WOUND.get(), 12000, 0, true, true, true));
+                player.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 6000, 3, true, true, true));
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 6000, 2, true, true, true));
+                break;
+            case 1 :
+                player.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 6000, 6, true, true, true));
+                player.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 6000, 4, true, true, true));
+                player.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 6000, 4, true, true, true));
+                player.addEffect(new MobEffectInstance(MobEffects.JUMP, 6000, 2, true, true, true));
+                break;
+            case 2 :
+                player.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 6000, 3, true, true, true));
+                player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 6000, 1, true, true, true));
+            default:
+                break;
+        }
+
     }
     public static CompoundTag playerNbtSyncProvider(ServerPlayer serverPlayer) {
         CompoundTag nbt = new CompoundTag();
@@ -236,6 +259,37 @@ public class EarlyUtil {
             };
             default -> ItemStack.EMPTY;
         };
+    }
+    public static void SyringeItemToolTip(ItemStack stack, Level world, List<Component> tooltip, TooltipFlag context, int type) {
+        //Utility for the tooltip of the custom SyringeItem class
+        switch (type) {
+            case 0:
+                if (Screen.hasShiftDown()) {
+                    tooltip.add(Component.translatable("tooltip.aristysa.crimsonlace_shift0"));
+                    tooltip.add(Component.translatable("tooltip.aristysa.crimsonlace_shift1"));
+                    tooltip.add(Component.translatable("tooltip.aristysa.crimsonlace_shift2"));
+                } else {
+                    tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                }
+                break;
+            case 1:
+                if (Screen.hasShiftDown()) {
+                    tooltip.add(Component.translatable("tooltip.aristysa.phantom_elixir_shift0"));
+                    tooltip.add(Component.translatable("tooltip.aristysa.phantom_elixir_shift1"));
+                } else {
+                    tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                }
+                break;
+            case 2:
+                if (Screen.hasShiftDown()) {
+                    tooltip.add(Component.translatable("tooltip.aristysa.shadow_haste_shift0"));
+                    tooltip.add(Component.translatable("tooltip.aristysa.shadow_haste_shift1"));
+                } else {
+                    tooltip.add(Component.translatable("tooltip.aristysa.hold_shift"));
+                }
+            default:
+                break;
+        }
     }
         public static void cyberwareItemToolTip(List<Component> tooltip, int tier, int type) {
             //Utility for the tooltip of the custom CyberwareItem class

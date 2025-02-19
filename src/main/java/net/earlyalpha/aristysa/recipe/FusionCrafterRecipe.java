@@ -56,12 +56,12 @@ public class FusionCrafterRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public RecipeSerializer<?> getSerializer() {
-        return null;
+        return Serializer.INSTANCE;
     }
 
     @Override
     public RecipeType<?> getType() {
-        return null;
+        return Type.INSTANCE;
     }
     public static class Type implements RecipeType<FusionCrafterRecipe> {
         public static final Type INSTANCE = new Type();
