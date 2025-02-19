@@ -1,6 +1,7 @@
 package net.earlyalpha.aristysa.block.entity;
 
 import net.earlyalpha.aristysa.item.ModItems;
+import net.earlyalpha.aristysa.recipe.FusionCrafterRecipe;
 import net.earlyalpha.aristysa.screen.FusionCrafterMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
@@ -153,9 +154,12 @@ public class FusionCrafterBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private boolean hasRecipe() {
-         boolean hasCraftingItem = this.itemStackHandler.getStackInSlot(SLOT_1).getItem() == ModItems.ALUMINUM_INGOT.get() && this.itemStackHandler.getStackInSlot(SLOT_2).getItem() == ModItems.ALUMINUM_INGOT.get();
-         ItemStack result = new ItemStack(ModItems.ALUMINUM_PLATE.get());
-         return hasCraftingItem && canInsertAmountIntoOutputSlot(result.getCount()) &&canInsertItemIntoOutputSlot(result.getItem().getDefaultInstance());
+        Optional<FusionCrafterRecipe> recipe = getCurrentRecipe();
+        if (recipe.isEmpty()) {
+            return false;
+        }
+
+         return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().getResultItem(null).getCount()) &&canInsertItemIntoOutputSlot(recipe.get().getResultItem(null).getItem().getDefaultInstance());
 
     }
 
@@ -172,7 +176,13 @@ public class FusionCrafterBlockEntity extends BlockEntity implements MenuProvide
         return this.itemStackHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() ||
                 this.itemStackHandler.getStackInSlot(OUTPUT_SLOT).getCount() < this.itemStackHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
     }
-
+    private Optional<FusionCrafterRecipe> getCurrentRecipe() {
+        SimpleContainer inventory = new SimpleContainer(this.itemStackHandler.getSlots());
+        for (int i = 0; i < itemStackHandler.getSlots(); i++) {
+            inventory.setItem(i, this.itemStackHandler.getStackInSlot(i));
+        }
+        return this.level.getRecipeManager().getRecipeFor(FusionCrafterRecipe.Type.INSTANCE,inventory,level);
+    }
 
     
 }

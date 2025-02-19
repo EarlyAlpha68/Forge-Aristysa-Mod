@@ -7,6 +7,7 @@ import net.earlyalpha.aristysa.effect.ModEffects;
 import net.earlyalpha.aristysa.item.ModCreativeTabs;
 import net.earlyalpha.aristysa.item.ModItems;
 import net.earlyalpha.aristysa.networking.ModMessages;
+import net.earlyalpha.aristysa.recipe.ModRecipes;
 import net.earlyalpha.aristysa.screen.CyberwareGuiScreen;
 import net.earlyalpha.aristysa.screen.FusionCrafterScreen;
 import net.earlyalpha.aristysa.screen.ModMenuTypes;
@@ -41,6 +42,7 @@ public class Aristysa {
         ModEffects.register(modEventBus);
         ModBlockEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
