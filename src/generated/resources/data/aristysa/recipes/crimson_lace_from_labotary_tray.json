@@ -1,0 +1,14 @@
+{
+  "type": "aristysa:labotary_tray_craft",
+  "ingredients": [
+    {
+      "item": "aristysa:wither_compound"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    }
+  ],
+  "output": {
+    "item": "aristysa:crimson_lace"
+  }
+}

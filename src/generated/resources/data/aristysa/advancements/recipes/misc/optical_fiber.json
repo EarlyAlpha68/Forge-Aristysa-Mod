@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_raw_lead": {
+    "has_sheathe": {
       "conditions": {
         "items": [
           {
             "items": [
-              "aristysa:raw_lead"
+              "aristysa:sheathe"
             ]
           }
         ]
@@ -15,20 +15,20 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "aristysa:raw_lead_block"
+        "recipe": "aristysa:optical_fiber"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "has_raw_lead",
+      "has_sheathe",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "aristysa:raw_lead_block"
+      "aristysa:optical_fiber"
     ]
   },
   "sends_telemetry_event": false

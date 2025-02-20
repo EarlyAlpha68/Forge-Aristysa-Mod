@@ -4,6 +4,7 @@ import net.earlyalpha.aristysa.Aristysa;
 import net.earlyalpha.aristysa.block.ModBlocks;
 import net.earlyalpha.aristysa.datagen.recipe.FusionCrafterRecipeBuilder;
 import net.earlyalpha.aristysa.datagen.recipe.LabotaryTrayRecipeBuilder;
+import net.earlyalpha.aristysa.datagen.tags.ModTags;
 import net.earlyalpha.aristysa.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -114,152 +115,152 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(pWriter);
 
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OPTICAL_CAMO_3)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OPTICAL_CAMO_3.get())
                 .pattern("DND")
                 .pattern("OCN")
                 .pattern("OOD")
-                .define('C', ModItems.OPTICAL_CAMO_2)
-                .define('O',ModItems.OPTICAL_FIBER)
+                .define('C', ModItems.OPTICAL_CAMO_2.get())
+                .define('O',ModItems.OPTICAL_FIBER.get())
                 .define('D', Items.DIAMOND)
                 .define('N', Items.NETHERITE_INGOT)
-                .unlockedBy(getHasName(ModItems.OPTICAL_CAMO_2), has(ModItems.OPTICAL_CAMO_2))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.OPTICAL_CAMO_3)));
+                .unlockedBy(getHasName(ModItems.OPTICAL_CAMO_2.get()), has(ModItems.OPTICAL_CAMO_2.get()))
+                .save(pWriter);
 
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUBDERMAL_ARMOR_1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUBDERMAL_ARMOR_1.get())
                 .pattern("PAP")
                 .pattern("ALA")
                 .pattern("PAP")
-                .define('L',ModBlocks.LEAD_BLOCK)
+                .define('L',ModBlocks.LEAD_BLOCK.get())
                 .define('A', ModTags.Items.ALUMINUM_PLATES)
                 .define('P',ModTags.Items.LEAD_PLATES)
-                .unlockedBy(getHasName(ModBlocks.LEAD_BLOCK), has(ModBlocks.LEAD_BLOCK))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.SUBDERMAL_ARMOR_1)));
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUBDERMAL_ARMOR_2)
+                .unlockedBy(getHasName(ModBlocks.LEAD_BLOCK.get()), has(ModBlocks.LEAD_BLOCK.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUBDERMAL_ARMOR_2.get())
                 .pattern("ADA")
                 .pattern("DCD")
                 .pattern("ADA")
-                .define('C',ModItems.SUBDERMAL_ARMOR_1)
+                .define('C',ModItems.SUBDERMAL_ARMOR_1.get())
                 .define('A', ModTags.Items.ALUMINUM_PLATES)
                 .define('D',Items.DIAMOND)
-                .unlockedBy(getHasName(ModItems.SUBDERMAL_ARMOR_1), has(ModItems.SUBDERMAL_ARMOR_1))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.SUBDERMAL_ARMOR_2)));
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUBDERMAL_ARMOR_3)
+                .unlockedBy(getHasName(ModItems.SUBDERMAL_ARMOR_1.get()), has(ModItems.SUBDERMAL_ARMOR_1.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SUBDERMAL_ARMOR_3.get())
                 .pattern("DND")
                 .pattern("ACN")
                 .pattern("AAD")
-                .define('C', ModItems.SUBDERMAL_ARMOR_2)
+                .define('C', ModItems.SUBDERMAL_ARMOR_2.get())
                 .define('A',ModTags.Items.ALUMINUM_PLATES)
                 .define('D', Items.DIAMOND)
                 .define('N', Items.NETHERITE_INGOT)
-                .unlockedBy(getHasName(ModItems.SUBDERMAL_ARMOR_2), has(ModItems.SUBDERMAL_ARMOR_2))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.SUBDERMAL_ARMOR_3)));
+                .unlockedBy(getHasName(ModItems.SUBDERMAL_ARMOR_2.get()), has(ModItems.SUBDERMAL_ARMOR_2.get()))
+                .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLEMARM_1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLEMARM_1.get())
                 .pattern("SII")
                 .pattern("WMI")
                 .pattern("SWS")
                 .define('I',Blocks.IRON_BLOCK)
-                .define('W', ModItems.WIRE)
-                .define('M',ModItems.MICRO_CHIP)
-                .define('S',ModItems.SYNTHETIC_MUSCLE)
+                .define('W', ModItems.WIRE.get())
+                .define('M',ModItems.MICRO_CHIP.get())
+                .define('S',ModItems.SYNTHETIC_MUSCLE.get())
                 .unlockedBy(getHasName(Blocks.IRON_BLOCK), has(Blocks.IRON_BLOCK))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.GOLEMARM_1)));
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLEMARM_2)
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLEMARM_2.get())
                 .pattern("WSI")
                 .pattern("SCS")
                 .pattern("SSW")
-                .define('C',ModItems.GOLEMARM_1)
+                .define('C',ModItems.GOLEMARM_1.get())
                 .define('I',Blocks.IRON_BLOCK)
-                .define('W', ModItems.WIRE)
-                .define('S',ModItems.SYNTHETIC_MUSCLE)
-                .unlockedBy(getHasName(ModItems.GOLEMARM_1), has(ModItems.GOLEMARM_1))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.GOLEMARM_2)));
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLEMARM_3)
+                .define('W', ModItems.WIRE.get())
+                .define('S',ModItems.SYNTHETIC_MUSCLE.get())
+                .unlockedBy(getHasName(ModItems.GOLEMARM_1.get()), has(ModItems.GOLEMARM_1.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.GOLEMARM_3.get())
                 .pattern("NDD")
                 .pattern("ICD")
                 .pattern("WIN")
-                .define('C', ModItems.GOLEMARM_2)
+                .define('C', ModItems.GOLEMARM_2.get())
                 .define('I',Blocks.IRON_BLOCK)
                 .define('D', Items.DIAMOND)
                 .define('N', Items.NETHERITE_INGOT)
-                .define('W',ModItems.WIRE)
-                .unlockedBy(getHasName(ModItems.GOLEMARM_2), has(ModItems.GOLEMARM_2))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.GOLEMARM_3)));
+                .define('W',ModItems.WIRE.get())
+                .unlockedBy(getHasName(ModItems.GOLEMARM_2.get()), has(ModItems.GOLEMARM_2.get()))
+                .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ENDEREYE_1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ENDEREYE_1.get())
                 .pattern("WGG")
                 .pattern("OMG")
                 .pattern("EOW")
                 .define('G',Blocks.GLASS)
-                .define('W', ModItems.WIRE)
-                .define('M',ModItems.MICRO_CHIP)
-                .define('O',ModItems.OPTICAL_FIBER)
+                .define('W', ModItems.WIRE.get())
+                .define('M',ModItems.MICRO_CHIP.get())
+                .define('O',ModItems.OPTICAL_FIBER.get())
                 .define('E',Items.ENDER_EYE)
-                .unlockedBy(getHasName(ModItems.OPTICAL_FIBER), has(ModItems.OPTICAL_FIBER))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.ENDEREYE_1)));
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ENDEREYE_2)
+                .unlockedBy(getHasName(ModItems.OPTICAL_FIBER.get()), has(ModItems.OPTICAL_FIBER.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ENDEREYE_2.get())
                 .pattern("RRR")
                 .pattern("OCR")
                 .pattern("WOR")
-                .define('C',ModItems.ENDEREYE_1)
-                .define('O',ModItems.OPTICAL_FIBER)
+                .define('C',ModItems.ENDEREYE_1.get())
+                .define('O',ModItems.OPTICAL_FIBER.get())
                 .define('R',Items.REDSTONE)
-                .define('W',ModItems.WIRE)
-                .unlockedBy(getHasName(ModItems.ENDEREYE_1), has(ModItems.ENDEREYE_1))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.ENDEREYE_2)));
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ENDEREYE_3)
+                .define('W',ModItems.WIRE.get())
+                .unlockedBy(getHasName(ModItems.ENDEREYE_1.get()), has(ModItems.ENDEREYE_1.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.ENDEREYE_3.get())
                 .pattern("NDD")
                 .pattern("OCD")
                 .pattern("WON")
-                .define('C', ModItems.ENDEREYE_2)
-                .define('O', ModItems.OPTICAL_FIBER)
+                .define('C', ModItems.ENDEREYE_2.get())
+                .define('O', ModItems.OPTICAL_FIBER.get())
                 .define('D', Items.DIAMOND)
                 .define('N', Items.NETHERITE_INGOT)
-                .define('W',ModItems.WIRE)
-                .unlockedBy(getHasName(ModItems.ENDEREYE_2), has(ModItems.ENDEREYE_2))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.ENDEREYE_3)));
+                .define('W',ModItems.WIRE.get())
+                .unlockedBy(getHasName(ModItems.ENDEREYE_2.get()), has(ModItems.ENDEREYE_2.get()))
+                .save(pWriter);
 
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CYBERLEG_1)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CYBERLEG_1.get())
                 .pattern("AWS")
                 .pattern("WSW")
                 .pattern("SWA")
-                .define('A',ModTags.Items.ALUMINUM_PLATES)
-                .define('W', ModItems.WIRE)
-                .define('S',ModItems.SYNTHETIC_MUSCLE)
-                .unlockedBy(getHasName(ModItems.SYNTHETIC_MUSCLE), has(ModItems.SYNTHETIC_MUSCLE))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.CYBERLEG_1)));
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CYBERLEG_2)
+                .define('A', ModTags.Items.ALUMINUM_PLATES)
+                .define('W', ModItems.WIRE.get())
+                .define('S',ModItems.SYNTHETIC_MUSCLE.get())
+                .unlockedBy(getHasName(ModItems.SYNTHETIC_MUSCLE.get()), has(ModItems.SYNTHETIC_MUSCLE.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CYBERLEG_2.get())
                 .pattern("DSS")
                 .pattern("WCS")
                 .pattern("DWD")
-                .define('C',ModItems.CYBERLEG_1)
-                .define('S', ModItems.SYNTHETIC_MUSCLE)
+                .define('C',ModItems.CYBERLEG_1.get())
+                .define('S', ModItems.SYNTHETIC_MUSCLE.get())
                 .define('D',Items.DIAMOND)
-                .define('W',ModItems.WIRE)
-                .unlockedBy(getHasName(ModItems.CYBERLEG_1), has(ModItems.CYBERLEG_1))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.CYBERLEG_2)));
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CYBERLEG_3)
+                .define('W',ModItems.WIRE.get())
+                .unlockedBy(getHasName(ModItems.CYBERLEG_1.get()), has(ModItems.CYBERLEG_1.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CYBERLEG_3.get())
                 .pattern("NON")
                 .pattern("OCO")
                 .pattern("NON")
-                .define('C', ModItems.CYBERLEG_2)
-                .define('O', ModItems.OPTICAL_FIBER)
+                .define('C', ModItems.CYBERLEG_2.get())
+                .define('O', ModItems.OPTICAL_FIBER.get())
                 .define('N', Items.NETHERITE_INGOT)
-                .unlockedBy(getHasName(ModItems.CYBERLEG_2), has(ModItems.CYBERLEG_2))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.CYBERLEG_3)));
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.FUSION_CRAFTER)
+                .unlockedBy(getHasName(ModItems.CYBERLEG_2.get()), has(ModItems.CYBERLEG_2.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.FUSION_CRAFTER.get())
                 .pattern("SQS")
                 .pattern("QDQ")
                 .pattern("SQS")
                 .define('S',ModTags.Items.LEAD_INGOTS)
                 .define('Q', Items.IRON_INGOT)
-                .define('D',ModBlocks.LEAD_BLOCK)
-                .unlockedBy(getHasName(ModItems.LEAD_INGOT), has(ModItems.LEAD_INGOT))
-                .save(pWriter,new Identifier(getRecipeName(ModBlocks.FUSION_CRAFTER)));
+                .define('D',ModBlocks.LEAD_BLOCK.get())
+                .unlockedBy(getHasName(ModItems.LEAD_INGOT.get()), has(ModItems.LEAD_INGOT.get()))
+                .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CONDUCTIVE_PASTE)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.CONDUCTIVE_PASTE.get())
                 .pattern("SQS")
                 .pattern("QDQ")
                 .pattern("SQS")
@@ -267,25 +268,25 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('Q', Items.COPPER_INGOT)
                 .define('D', Items.REDSTONE)
                 .unlockedBy(getHasName(Items.COPPER_INGOT), has(Items.COPPER_INGOT))
-                .save(pWriter,new Identifier(getRecipeName(ModItems.CONDUCTIVE_PASTE)));
+                .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OPTICAL_FIBER)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.OPTICAL_FIBER.get())
                 .pattern("DSG")
                 .pattern("SGS")
                 .pattern("GSD")
-                .define('S', ModItems.SHEATHE)
+                .define('S', ModItems.SHEATHE.get())
                 .define('G', Blocks.GLASS)
                 .define('D', Items.DIAMOND)
-                .unlockedBy(getHasName(ModItems.SHEATHE), has(ModItems.SHEATHE))
+                .unlockedBy(getHasName(ModItems.SHEATHE.get()), has(ModItems.SHEATHE.get()))
                 .save(pWriter);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WIRE)
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WIRE.get())
                 .pattern(" SG")
                 .pattern("SGS")
                 .pattern("GS ")
-                .define('S', ModItems.SHEATHE)
+                .define('S', ModItems.SHEATHE.get())
                 .define('G', Items.COPPER_INGOT)
-                .unlockedBy(getHasName(ModItems.SHEATHE), has(ModItems.SHEATHE))
+                .unlockedBy(getHasName(ModItems.SHEATHE.get()), has(ModItems.SHEATHE.get()))
                 .save(pWriter);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.SYNTHETIC_MUSCLE.get())
@@ -295,7 +296,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S',Items.BLAZE_ROD)
                 .define('Q', Items.ROTTEN_FLESH)
                 .define('D',Items.LEATHER)
-                .define('E', ModItems.ALUMINUM_INGOT)
+                .define('E', ModItems.ALUMINUM_INGOT.get())
                 .unlockedBy(getHasName(ModItems.ALUMINUM_INGOT.get()), has(ModItems.ALUMINUM_INGOT.get()))
                 .save(pWriter);
 
@@ -321,10 +322,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModBlocks.RAW_LEAD_BLOCK.get())
                 .unlockedBy(getHasName(ModBlocks.RAW_LEAD_BLOCK.get()),has(ModBlocks.RAW_LEAD_BLOCK.get()))
                 .save(pWriter);
-        new FusionCrafterRecipeBuilder(new ItemLike[]{ModItems.ALUMINUM_INGOT.get(), ModItems.ALUMINUM_INGOT.get()},
-                ModItems.ALUMINUM_PLATE.get(), 1).save(pWriter, "aluminum_plate");
-        new LabotaryTrayRecipeBuilder(new ItemLike[]{ModItems.ALUMINUM_INGOT.get(), ModItems.ALUMINUM_INGOT.get()},
-                ModItems.ALUMINUM_PLATE.get(), 1).save(pWriter, "aluminum_plate");
+        new FusionCrafterRecipeBuilder(new ItemLike[]{ModItems.LEAD_INGOT.get(), ModItems.LEAD_INGOT.get()}
+                , ModItems.LEAD_PLATE.get(), 1).save(pWriter, "lead_plate");
+        new FusionCrafterRecipeBuilder(new ItemLike[]{ModItems.ALUMINUM_INGOT.get(), ModItems.ALUMINUM_INGOT.get()}
+                , ModItems.ALUMINUM_PLATE.get(), 1).save(pWriter, "aluminum_plate");
+        new FusionCrafterRecipeBuilder(new ItemLike[]{Items.DRIED_KELP, Items.IRON_INGOT}
+                , ModItems.SHEATHE.get(), 1).save(pWriter, "sheathe");
+        new LabotaryTrayRecipeBuilder(new ItemLike[]{ModItems.WITHER_COMPOUND.get(), Items.NETHERITE_SCRAP}
+                , ModItems.CRIMSON_LACE.get(), 1).save(pWriter, "crimson_lace");
+        new LabotaryTrayRecipeBuilder(new ItemLike[]{ModItems.EMPTY_SYRINGE.get(), Items.WITHER_SKELETON_SKULL}
+                , ModItems.WITHER_COMPOUND.get(), 1).save(pWriter, "wither_compound");
+        new LabotaryTrayRecipeBuilder(new ItemLike[]{ModItems.WITHER_COMPOUND.get(), Items.PHANTOM_MEMBRANE}
+                , ModItems.PHANTOM_ELIXIR.get(), 1).save(pWriter, "phantom_elixir");
+        new LabotaryTrayRecipeBuilder(new ItemLike[]{ModItems.WITHER_COMPOUND.get(), Items.GUNPOWDER}
+                , ModItems.SHADOW_HASTE.get(), 1).save(pWriter, "phantom_elixir");
+
     }
 
 

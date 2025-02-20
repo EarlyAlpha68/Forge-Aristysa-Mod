@@ -1,6 +1,8 @@
 package net.earlyalpha.aristysa.datagen;
 
 import net.earlyalpha.aristysa.Aristysa;
+import net.earlyalpha.aristysa.datagen.tags.ModTags;
+import net.earlyalpha.aristysa.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
@@ -17,6 +19,16 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
+
+        tag(ModTags.Items.ALUMINUM_INGOTS)
+                .add(ModItems.ALUMINUM_INGOT.get());
+        tag(ModTags.Items.LEAD_INGOTS)
+                .add(ModItems.LEAD_INGOT.get());
+        tag(ModTags.Items.ALUMINUM_PLATES)
+                .add(ModItems.ALUMINUM_PLATE.get());
+        tag(ModTags.Items.LEAD_PLATES)
+                .add(ModItems.LEAD_PLATE.get());
+
 
     }
 }

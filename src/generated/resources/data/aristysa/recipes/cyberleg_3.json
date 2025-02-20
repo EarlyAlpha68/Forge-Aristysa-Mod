@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "aristysa:cyberleg_2"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "O": {
+      "item": "aristysa:optical_fiber"
+    }
+  },
+  "pattern": [
+    "NON",
+    "OCO",
+    "NON"
+  ],
+  "result": {
+    "item": "aristysa:cyberleg_3"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "aristysa:lead_block"
+    },
+    "Q": {
+      "item": "minecraft:iron_ingot"
+    },
+    "S": {
+      "tag": "forge:lead_ingots"
+    }
+  },
+  "pattern": [
+    "SQS",
+    "QDQ",
+    "SQS"
+  ],
+  "result": {
+    "item": "aristysa:fusion_crafter"
+  },
+  "show_notification": true
+}

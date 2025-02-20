@@ -1,0 +1,14 @@
+{
+  "type": "aristysa:labotary_tray_craft",
+  "ingredients": [
+    {
+      "item": "aristysa:wither_compound"
+    },
+    {
+      "item": "minecraft:phantom_membrane"
+    }
+  ],
+  "output": {
+    "item": "aristysa:phantom_elixir"
+  }
+}

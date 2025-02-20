@@ -1,3 +1,6 @@
-// 1.20.1	2025-02-13T08:42:06.4287726	Tags for minecraft:block mod id aristysa
+// 1.20.1	2025-02-20T09:43:00.6619474	Tags for minecraft:block mod id aristysa
+4815370cc3bac57d30d56809565a0aa58888ab9a data/forge/tags/blocks/aluminum_ores.json
+795e246bfdc3b81a2556fb752aea2c18ac495fa5 data/forge/tags/blocks/lead_blocks.json
+6dc56963554ec14178ba3da390b49ddbc2789051 data/forge/tags/blocks/lead_ores.json
 1c97fa2618338651fb7b91360f621f026d08bf60 data/minecraft/tags/blocks/mineable/pickaxe.json
 1c97fa2618338651fb7b91360f621f026d08bf60 data/minecraft/tags/blocks/needs_iron_tool.json

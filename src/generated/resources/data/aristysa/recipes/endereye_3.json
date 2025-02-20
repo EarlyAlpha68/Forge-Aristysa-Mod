@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "aristysa:endereye_2"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "O": {
+      "item": "aristysa:optical_fiber"
+    },
+    "W": {
+      "item": "aristysa:wire"
+    }
+  },
+  "pattern": [
+    "NDD",
+    "OCD",
+    "WON"
+  ],
+  "result": {
+    "item": "aristysa:endereye_3"
+  },
+  "show_notification": true
+}

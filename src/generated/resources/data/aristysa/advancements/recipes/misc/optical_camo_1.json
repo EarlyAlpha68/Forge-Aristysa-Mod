@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_subdermal_armor_1": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "aristysa:subdermal_armor_1"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "aristysa:optical_camo_1"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_subdermal_armor_1",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "aristysa:optical_camo_1"
+    ]
+  },
+  "sends_telemetry_event": false
+}

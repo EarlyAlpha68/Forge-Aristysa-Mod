@@ -1,1 +1,5 @@
-// 1.20.1	2025-02-13T08:42:06.4287726	Tags for minecraft:item mod id aristysa
+// 1.20.1	2025-02-20T09:43:00.6619474	Tags for minecraft:item mod id aristysa
+759db7611275d1fc98ac1dbe7ed7b583fad333e4 data/forge/tags/items/aluminum_ingots.json
+8b077a0742a83102063cd10875114f7623f08dbe data/forge/tags/items/aluminum_plates.json
+c7f7ad483f9a232a8f2fd3d8dcb0377f573ef882 data/forge/tags/items/lead_ingots.json
+999064c1d72b3a2a166c538a0da718bdffb20871 data/forge/tags/items/lead_plates.json

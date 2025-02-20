@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "aristysa:endereye_1"
+    },
+    "O": {
+      "item": "aristysa:optical_fiber"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    },
+    "W": {
+      "item": "aristysa:wire"
+    }
+  },
+  "pattern": [
+    "RRR",
+    "OCR",
+    "WOR"
+  ],
+  "result": {
+    "item": "aristysa:endereye_2"
+  },
+  "show_notification": true
+}
