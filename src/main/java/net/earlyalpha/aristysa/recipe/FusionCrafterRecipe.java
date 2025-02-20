@@ -25,6 +25,10 @@ public class FusionCrafterRecipe implements Recipe<SimpleContainer> {
         this.id = id;
     }
 
+    @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return recipeItem;
+    }
 
     @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
@@ -65,7 +69,7 @@ public class FusionCrafterRecipe implements Recipe<SimpleContainer> {
     }
     public static class Type implements RecipeType<FusionCrafterRecipe> {
         public static final Type INSTANCE = new Type();
-        public static final String ID = "fusion_crafter";
+        public static final String ID = "fusion_crafting";
     }
 
     public static class Serializer implements RecipeSerializer<FusionCrafterRecipe> {

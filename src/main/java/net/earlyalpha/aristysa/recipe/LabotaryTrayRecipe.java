@@ -27,6 +27,10 @@ public class LabotaryTrayRecipe implements Recipe<SimpleContainer> {
 
 
     @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return recipeItem;
+    }
+    @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
         if (pLevel.isClientSide()){
             return false;
@@ -65,7 +69,7 @@ public class LabotaryTrayRecipe implements Recipe<SimpleContainer> {
     }
     public static class Type implements RecipeType<LabotaryTrayRecipe> {
         public static final Type INSTANCE = new Type();
-        public static final String ID = "labotary_tray";
+        public static final String ID = "labotary_tray_craft";
     }
 
     public static class Serializer implements RecipeSerializer<LabotaryTrayRecipe> {
