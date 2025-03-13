@@ -66,6 +66,7 @@ public class CyberwareItem extends Item {
         EarlyUtil.cyberwareItemToolTip(pTooltipComponents,this.tier,EarlyUtil.getImplantType(this.key));
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
+
 }
 
 

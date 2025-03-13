@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import net.earlyalpha.aristysa.block.ModBlocks;
 import net.earlyalpha.aristysa.block.entity.ModBlockEntities;
 import net.earlyalpha.aristysa.effect.ModEffects;
+import net.earlyalpha.aristysa.event.ModEvents;
 import net.earlyalpha.aristysa.item.ModCreativeTabs;
 import net.earlyalpha.aristysa.item.ModItems;
 import net.earlyalpha.aristysa.networking.ModMessages;
@@ -53,6 +54,7 @@ public class Aristysa {
         event.enqueueWork(() -> {
             ModMessages.register();
         });
+        MinecraftForge.EVENT_BUS.addListener(ModEvents::onMobEffectRemove);
 
     }
     @SubscribeEvent

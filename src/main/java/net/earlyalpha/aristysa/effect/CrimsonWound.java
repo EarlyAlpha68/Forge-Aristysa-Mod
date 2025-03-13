@@ -1,5 +1,8 @@
 package net.earlyalpha.aristysa.effect;
 
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.Entity;
@@ -16,31 +19,19 @@ import java.util.UUID;
 public class CrimsonWound extends MobEffect {
     protected CrimsonWound(MobEffectCategory pCategory, int pColor) {
         super(pCategory, pColor);
+        addAttributeModifier(Attributes.MAX_HEALTH
+                , HALF_MAX_HEALTH_UUID.toString(),
+                -0.5,
+                AttributeModifier.Operation.MULTIPLY_TOTAL);
     }
     public static final UUID HALF_MAX_HEALTH_UUID = UUID.fromString("cc9880e9-7b53-4e45-8c2e-7d292f717c30");
 
     @Override
-    public void applyInstantenousEffect(@Nullable Entity pSource, @Nullable Entity pIndirectSource, LivingEntity entity, int pAmplifier, double pHealth) {
-        if (entity.getHealth() > entity.getMaxHealth() / 2) {
-            entity.setHealth(entity.getMaxHealth() / 2);
-        } else {
-            entity.setHealth(entity.getHealth());
+    public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
+        if (pLivingEntity.getMaxHealth() < pLivingEntity.getHealth()) {
+            pLivingEntity.hurt(pLivingEntity.damageSources().magic(),pLivingEntity.getHealth() - (pLivingEntity.getMaxHealth()));
         }
-    }
-
-
-    @Override
-    public void applyEffectTick(LivingEntity entity, int pAmplifier) {
-        {
-            AttributeInstance attributeInstance = entity.getAttribute(Attributes.MAX_HEALTH);
-            if (attributeInstance != null) {
-                AttributeModifier halfMaxHealthModifier = new AttributeModifier(HALF_MAX_HEALTH_UUID, "Half max health", -0.5, AttributeModifier.Operation.MULTIPLY_TOTAL);
-                if (!attributeInstance.hasModifier(halfMaxHealthModifier)) {
-                    attributeInstance.addTransientModifier(halfMaxHealthModifier);
-                }
-            }
-            super.applyEffectTick(entity,pAmplifier);
-        }
+        super.applyEffectTick(pLivingEntity, pAmplifier);
     }
 
     @Override
@@ -49,11 +40,14 @@ public class CrimsonWound extends MobEffect {
     }
 
     @Override
+    public void applyInstantenousEffect(@Nullable Entity pSource, @Nullable Entity pIndirectSource, LivingEntity pLivingEntity, int pAmplifier, double pHealth) {
+        pHealth = (double) pLivingEntity.getMaxHealth()/2;
+
+        super.applyInstantenousEffect(pSource, pIndirectSource, pLivingEntity, pAmplifier, pHealth);
+    }
+
+    @Override
     public void removeAttributeModifiers(LivingEntity entity, AttributeMap pAttributeMap, int pAmplifier) {
-        AttributeInstance attributeInstance = entity.getAttribute(Attributes.MAX_HEALTH);
-        if (attributeInstance != null) {
-            attributeInstance.removeModifier(HALF_MAX_HEALTH_UUID);
-        }
         super.removeAttributeModifiers(entity, pAttributeMap, pAmplifier);
     }
     @Override

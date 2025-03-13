@@ -17,4 +17,5 @@ public class CyberwareCooldown extends MobEffect {
         ArrayList<ItemStack> ret = new ArrayList<ItemStack>();
         return ret;
     }
+
 }
